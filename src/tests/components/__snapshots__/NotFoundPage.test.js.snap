@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render page not found error correctly 1`] = `
+<div>
+  <p>
+    404 
+    <Link
+      activeClassName="is-active"
+      replace={false}
+      to="/"
+    >
+      Go home
+    </Link>
+     
+  </p>
+</div>
+`;
