@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import ExspensifyDashboardPage from '../components/ExspensifyDashboardPage';
-import AddExspensePage from '../components/AddExpensePage';
-import EditExspensePage from '../components/EditExspensePage';
+import ExpensifyDashboardPage from '../components/ExpensifyDashboardPage';
+import AddExpensePage from '../components/AddExpensePage';
+import EditExpensePage from '../components/EditExpensePage';
 import HelpPage from '../components/HelpPage';
 import Header from '../components/Header';
 import NotFoundPage from '../components/NotFoundPage';
