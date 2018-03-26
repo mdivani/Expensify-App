@@ -8,7 +8,7 @@ exports[`should render edit expense page 1`] = `
         "amount": 109500,
         "createAt": -345600000,
         "description": "rent",
-        "id": 2,
+        "id": "2",
         "note": "",
       }
     }
