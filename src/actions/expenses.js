@@ -78,6 +78,8 @@ export const startSetExpenses = () => {
                 });
             });
             dispatch(setExpenses(expenses));
+        }).catch((error)=> {
+            //if user isn't signed on refresh this error gets called
         });
     }
 }
