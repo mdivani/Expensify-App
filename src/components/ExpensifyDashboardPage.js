@@ -5,9 +5,9 @@ import ExpensesSummary from './ExpensesSummary';
 
 const ExpensifyDashboardPage = () => (
     <div>
+        <ExpensesSummary />    
         <ExpenseListFilter />
         <ExpensesList />
-        <ExpensesSummary />
     </div>
 );
 

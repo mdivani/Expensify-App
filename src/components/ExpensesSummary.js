@@ -1,28 +1,34 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import selectedExpenses from '../selectors/expenses';
 import totalExpensesSelector from '../selectors/expenses-total';
 
-export const ExpensesSummary = (props) => {
-    const totallingExpenses = numeral(totalExpensesSelector(props.expenses)/100).format('$0,0.00');
-    const totalExpenses = props.expenses.length;
+export const ExpensesSummary = ({expenseCount, expensesTotal}) => {
+    const formattedExpensesTotal = numeral(expensesTotal/100).format('$0,0.00');
+    const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
 return (
-    <div>
-        {totalExpenses > 0 && <p>
-            {
-            props.expenses.length === 1 ? 
-            `Viewing 1 expense totalling ${totallingExpenses}` : 
-            `Viewing ${totalExpenses} expenses totalling ${totallingExpenses}`
-            }
-        </p>
-        }
+<div className='page-header'>
+    <div className='content_container'>
+    <h1 className='page-header__title'>
+        Viewing <span>{expenseCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span>
+    </h1>
+    <div className='page-header__actions'>
+        <Link className='button' to='/create'>Add Expense</Link>
+    </div>
+    </div>
 </div>
 )
 }
 
-const fromStateToProp = (state) => ({
-    expenses: selectedExpenses(state.expenses, state.filter)
-})
+const fromStateToProp = (state) => {
+    const visibleExpenses = selectedExpenses(state.expenses, state.filter);
+    return {
+        expensesTotal: totalExpensesSelector(visibleExpenses),
+        expenseCount: visibleExpenses.length
+    }      
+}
+
 
 export default connect(fromStateToProp)(ExpensesSummary);

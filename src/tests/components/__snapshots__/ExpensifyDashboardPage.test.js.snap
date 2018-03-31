@@ -2,8 +2,8 @@
 
 exports[`should render page not found error correctly 1`] = `
 <div>
+  <Connect(ExpensesSummary) />
   <Connect(ExpenseListFilter) />
   <Connect(ExpenseList) />
-  <Connect(ExpensesSummary) />
 </div>
 `;
