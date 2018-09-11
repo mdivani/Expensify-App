@@ -5,7 +5,8 @@ import { DateRangePicker } from 'react-dates';
 
 export class ExpenseListFilter extends React.Component {
     state = {
-        calendarFocused: null
+        calendarFocused: null,
+        sortBy: 'date'
     }
 
     onDatesChange = ({ startDate, endDate }) => {
@@ -80,8 +81,8 @@ const fromStateToProp = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     setTextFilter: (text) => dispatch(setTextFilter(text)),
-    sortByDate: () => dispatch(sortByDate),
-    sortByAmount: () => dispatch(sortByAmount),
+    sortByDate: () => dispatch(sortByDate()),
+    sortByAmount: () => dispatch(sortByAmount()),
     setStartDate: (date) => dispatch(setStartDate(date)),
     setEndDate: (date) => dispatch(setEndDate(date))
 })
