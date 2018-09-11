@@ -16,7 +16,6 @@ export default (state = filterReducerDefaultState, action) => {
                 text: action.text
             };
         case 'SORT_BY_AMOUNT':
-            console.log(action.sortBy);
             return {
                 ...state,
                 sortBy: action.sortBy
