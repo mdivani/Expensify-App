@@ -1,6 +1,7 @@
 .button {
-    background: $btn-blue;
+    background-color: $color-primary;
     border: none;
+    box-shadow: 0 0 $xs-size rgba($color-black, .6);
     color: $white;
     display: inline-block;
     line-height: 1;
@@ -8,12 +9,57 @@
     font-weight: 300;
     padding: $s-size;
     text-decoration: none;
-}
+    transition: all .3s ease-in;
 
-.button--secondary {
-    background: #888888;
-}
+    &:hover {
+        transform: translateY(-.8rem);
+        background-color: lighten($color-primary, 5%);
+        box-shadow: 0 $xs-size $xs-size rgba($color-black, .6);
+    }
 
-.button--link {
-    background: none;
-} 
+    &:active {
+        transform: translateY(-.5rem);
+        background-color: lighten($color-primary, 5%);
+        box-shadow: 0 $xs-size/2 $xs-size rgba($color-black, .6);  
+    }
+
+    &--primary {
+
+        &:hover {
+            background-color: lighten($color-primary, 5%);
+        }
+    
+        &:active {
+            background-color: lighten($color-primary, 5%); 
+        }
+    }
+
+    &--secondary {
+        background: #888888;
+
+        &:hover {
+            background-color: lighten($color-red, 5%);
+        }
+    
+        &:active {
+            background-color: lighten($color-red, 5%); 
+        }
+    }
+    
+    &--link {
+        box-shadow: none;
+        background: none;
+
+        &:hover {
+            background-color: transparent;
+            box-shadow: none;
+            transform: translate(0);
+        }
+    
+        &:active {
+            background-color: transparent; 
+            box-shadow: none;
+            transform: translate(0);
+        }
+    } 
+}

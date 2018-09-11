@@ -1,0 +1,38 @@
+.heading {
+
+    &--primary {
+        text-align: center;
+        font-size: $font-size-large;
+    }
+
+    &--secondary {
+        text-align: center;
+        font-size: $font-size-medium;
+    }
+
+    &--brand {
+        margin: $xs-size auto;
+        cursor: pointer;
+        text-shadow: $xs-size 0 $xs-size rgba($color-black, .4);
+        transition: all .3s ease;
+
+        &__first {
+            text-transform: capitalize;
+            color: $color-secondary;
+        }
+
+        &__second {
+            text-transform: capitalize;
+            color: $color-primary;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            transform: skewX(-10deg) rotateY(10deg);
+        }
+
+        &:hover &__second {
+            color: $color-red; 
+        }
+    }
+}
