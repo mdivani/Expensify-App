@@ -53,6 +53,7 @@
 
 .list-item__data {
     margin: $s-size 0 0 0;
+    color: $color-red;
     @media (min-width: $desktop-breakpoint) {
         margin: 0;
         padding-left: $m-size;
